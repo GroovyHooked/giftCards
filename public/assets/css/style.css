@@ -1,0 +1,552 @@
+:root {
+    --navyBlue: #4F5D75;
+    --space: #222841;
+    --gris: #BFC0C0;
+    --blanc: #FFFFFF;
+    --mandarin: #EF8354;
+    --grisClair: #d3d3d3;
+    --grisFonce: #495057;
+
+    --jaune: #f9c80e;
+    --orange: #f86624;
+    --rouge: #ea3546;
+    --violet: #662e9b;
+    --pastelB: #43bccd;
+}
+body {
+    background: var(--blanc);
+    color: var(--mandarin);
+    font-family: Georgia, serif;
+}
+.table td{
+    padding: 0.4rem;
+}
+#header {
+    height: 5rem;
+}
+
+.header-top {
+    background-color: var(--navyBlue);
+    z-index: 5;
+}
+/* Combinaisons   */
+#page-container {
+    position: relative;
+    min-height: 100vh;
+}
+
+#content-wrap {
+    padding-bottom: 5rem;
+}
+
+#footer {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    height: 5rem;
+}
+.paginationButton{
+    font-size: 11px;
+    position: relative;
+    left: -2px;
+    bottom: 0;
+    padding: 3px 4px;
+}
+.footer {
+    background-color: var(--navyBlue);
+}
+/* Dark Mode Button */
+#btn-dark1 {
+    padding: 4px;
+}
+.pagination{
+    width: 150%;
+    justify-content: space-evenly;
+    margin-left: 5px;
+}
+#imgContact{
+    position: relative;
+    left: 64%;
+    top: -33%;
+}
+#contactForm{
+    margin-top: -5px;
+}
+/****************
+    Login Page
+    (Transitions sur "Connexion")
+    ******************/
+span.ccc{
+    opacity: 0;
+    margin-right: -5px;  /* supprime l'espacement entre les lettres span mise à la ligne dans le html */
+}
+.ee1{
+    position: relative;
+    animation: p1 0.3s ease 1;
+    animation-fill-mode: forwards;    /*      E          */
+}
+
+@keyframes p1 {
+    0%{opacity: 0;}
+    25%{opacity: 0.3;}
+    50%{opacity: 0.6;}
+    75%{opacity: 0.9;}
+    100%{opacity: 1;}
+}
+.es1{
+    position: relative;
+    animation: p2 0.3s ease 1;     /*      S          */
+    animation-delay: 0.15s;
+    animation-fill-mode: forwards;
+}
+@keyframes p2 {
+    0%{opacity: 0;}
+    25%{opacity: 0.3;}
+    50%{opacity: 0.6;}
+    75%{opacity: 0.9;}
+    100%{opacity: 1;}
+}
+.ep{
+    position: relative;
+    animation: p3 0.3s ease 1;      /*      P         */
+    animation-delay: 0.3s;
+    animation-fill-mode: forwards;
+}
+@keyframes p3 {
+    0%{opacity: 0;}
+    25%{opacity: 0.3;}
+    50%{opacity: 0.6;}
+    75%{opacity: 0.9;}
+    100%{opacity: 1;}
+}
+.ea{
+    position: relative;
+    animation: p4 0.3s ease 1;     /*      A         */
+    animation-delay: 0.45s;
+    animation-fill-mode: forwards;
+}
+@keyframes p4 {
+    0%{opacity: 0;}
+    25%{opacity: 0.3;}
+    50%{opacity: 0.6;}
+    75%{opacity: 0.9;}
+    100%{opacity: 1;}
+}
+.ec{
+    animation: p5 0.3s ease 1;      /*      C         */
+    animation-delay: 0.6s;
+    animation-fill-mode: forwards;
+}
+@keyframes p5 {
+    0%{opacity: 0;}
+    25%{opacity: 0.3;}
+    50%{opacity: 0.6;}
+    75%{opacity: 0.9;}
+    100%{opacity: 1;}
+}
+.ee2{
+    animation: p6 0.75s ease 1;     /*      E         */
+    animation-delay: 0.75s;
+    animation-fill-mode: forwards;
+}
+@keyframes p6 {
+    0%{opacity: 0;}
+    25%{opacity: 0.3;}
+    50%{opacity: 0.6;}
+    75%{opacity: 0.9;}
+    100%{opacity: 1;}
+}
+.ed{
+    animation: p7 0.9s ease 1;     /*      D         */
+    animation-delay: 0.9s;
+    animation-fill-mode: forwards;
+}
+@keyframes p7 {
+    0%{opacity: 0;}
+    25%{opacity: 0.3;}
+    50%{opacity: 0.6;}
+    75%{opacity: 0.9;}
+    100%{opacity: 1;}
+}
+.ee3{
+    animation: d1 0.3s ease 1;     /*      E         */
+    animation-delay: 1.05s;
+    animation-fill-mode: forwards;
+}
+@keyframes d1 {
+    0%{opacity: 0;}
+    25%{opacity: 0.3;}
+    50%{opacity: 0.6;}
+    75%{opacity: 0.9;}
+    100%{opacity: 1;}
+}
+.cc{
+    animation: d2 0.3s ease 1;      /*      C         */
+    animation-delay: 1.2s;
+    animation-fill-mode: forwards;
+}
+@keyframes d2 {
+    0%{opacity: 0;}
+    25%{opacity: 0.3;}
+    50%{opacity: 0.6;}
+    75%{opacity: 0.9;}
+    100%{opacity: 1;}
+}
+.co1{
+    animation: d3 0.3s ease 1;          /*      O         */
+    animation-delay: 1.35s;
+    animation-fill-mode: forwards;
+}
+@keyframes d3 {
+    0%{opacity: 0;}
+    25%{opacity: 0.3;}
+    50%{opacity: 0.6;}
+    75%{opacity: 0.9;}
+    100%{opacity: 1;}
+}
+.cn1{
+    animation: d4 0.3s ease 1;           /*      N         */
+    animation-delay: 1.5s;
+    animation-fill-mode: forwards;
+}
+@keyframes d4 {
+    0%{opacity: 0;}
+    25%{opacity: 0.3;}
+    50%{opacity: 0.6;}
+    75%{opacity: 0.9;}
+    100%{opacity: 1;}
+}
+.cn2{
+    animation: d5 0.3s ease 1;       /*      N         */
+    animation-delay: 1.65s;
+    animation-fill-mode: forwards;
+}
+@keyframes d5 {
+    0%{opacity: 0;}
+    25%{opacity: 0.3;}
+    50%{opacity: 0.6;}
+    75%{opacity: 0.9;}
+    100%{opacity: 1;}
+}
+.ce{
+    animation: d6 0.3s ease 1;        /*      E         */
+    animation-delay: 1.8s;
+    animation-fill-mode: forwards;
+}
+@keyframes d6 {
+    0%{opacity: 0;}
+    25%{opacity: 0.3;}
+    50%{opacity: 0.6;}
+    75%{opacity: 0.9;}
+    100%{opacity: 1;}
+}
+.cx{
+    animation: d7 0.3s ease 1;      /*      X         */
+    animation-delay: 1.95s;
+    animation-fill-mode: forwards;
+}
+@keyframes d7 {
+    0%{opacity: 0;}
+    25%{opacity: 0.3;}
+    50%{opacity: 0.6;}
+    75%{opacity: 0.9;}
+    100%{opacity: 1;}
+}
+.ci{
+    animation: d8 0.3s ease 1;       /*      I         */
+    animation-delay: 2.1s;
+    animation-fill-mode: forwards;
+}
+@keyframes d8 {
+    0%{opacity: 0;}
+    25%{opacity: 0.3;}
+    50%{opacity: 0.6;}
+    75%{opacity: 0.9;}
+    100%{opacity: 1;}
+}
+.co2{
+    animation: d9 0.3s ease 1;          /*      O         */
+    animation-delay: 2.25s;
+    animation-fill-mode: forwards;
+}
+@keyframes d9 {
+    0%{opacity: 0;}
+    25%{opacity: 0.3;}
+    50%{opacity: 0.6;}
+    75%{opacity: 0.9;}
+    100%{opacity: 1;}
+}
+.cn3{
+    animation: d10 0.3s ease 1;           /*      N         */
+    animation-delay: 2.4s;
+    animation-fill-mode: forwards;
+}
+@keyframes d10 {
+    0%{opacity: 0;}
+    25%{opacity: 0.3;}
+    50%{opacity: 0.6;}
+    75%{opacity: 0.9;}
+    100%{opacity: 1;}
+}
+/****************
+   End of transitions
+    ******************/
+/*        AIDE         */
+
+.hiddenInfos{
+    display: none;
+}
+.hiddenInfosBottom{
+    display: none;
+}
+.displayHelp:after{
+    position: absolute;
+    content: '';
+    height: 0;
+    width: 0;
+    left: 47%;
+    top: 75%;
+    border-left: 7px solid transparent;
+    border-right: 7px solid transparent;
+    border-top: 13px solid var(--mandarin);
+}
+@media screen and (min-width: 547px) {
+    .displayHelp:after{
+        position: absolute;
+        content: '';
+        height: 0;
+        width: 0;
+        left: 47%;
+        top: 55%;
+        border-left: 7px solid transparent;
+        border-right: 7px solid transparent;
+        border-top: 13px solid var(--mandarin);
+    }
+}
+.displayBottomHelp:after{
+    position: absolute;
+    content: '';
+    height: 0;
+    width: 0;
+    left: 47%;
+    top: 90%;
+    border-left: 7px solid transparent;
+    border-right: 7px solid transparent;
+    border-top: 13px solid var(--mandarin);
+}
+.displayHelp {
+    display: block;
+    position: relative;
+}
+/****************
+   Dashboard Buttons
+    ******************/
+/* Dashboard button */
+.btn-outline-secondary {
+    background-color: var(--navyBlue);
+    color: var(--blanc);
+    border-color: var(--navyBlue);
+}
+
+.btn-outline-secondary:hover {
+    background-color: var(--navyBlue);
+}
+.dashButtonDiv{
+    position: relative;
+}
+.dashButton{
+    position: relative;
+}
+
+.prez{
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: -1;
+    height: 39px;
+    font-size: 0.1rem;
+    width: 100%;
+    background-color: #bfc0c0;
+    color: var(--blanc);
+    border-radius: 4px;
+    transition: all 0.5s ease;
+}
+.dashButtonDiv:hover .prez {
+    font-size: 0.8rem;
+    height: 62px;
+    top: 20px;
+    padding-top: 23px;
+}
+@media  screen and (min-width: 416px) {
+    .dashButtonDiv:hover .prez {
+        font-size: 0.8rem;
+        height: 48px;
+        top: 20px;
+        padding-top: 23px;
+    }
+
+}
+
+@media  screen and (min-width: 1000px) {
+    .prez{
+        position: absolute;
+        top: 0;
+        left: 0;
+        z-index: -1;
+        height: 39px;
+        font-size: 1rem;
+        width: 100%;
+        background-color: var(--navyBlue);
+        color: var(--blanc);
+        border-radius: 4px;
+        transition: all 0.5s ease;
+    }
+    .dashButtonDiv:hover .prez {
+        font-size: 1.1rem;
+        height: 75px;
+        top: 20px;
+        padding-top: 43px;
+    }
+}
+
+ /******************/
+
+/* Modal button "+" & "send" button */
+.btn-primary {
+    background-color: var(--mandarin);
+    border-color: var(--mandarin);
+
+}
+.btn-primary:hover {
+    background-color: var(--orange);
+    border-color: var(--orange);
+}
+/* Dropdown menu */
+.dropdown-toggle {
+    background-color: var(--navyBlue);
+    color: var(--blanc);
+    border-color: var(--blanc);
+}
+
+.dropdown-toggle:hover {
+    background-color: var(--space);
+}
+
+.dropdown-toggle:active {
+    background-color: var(--space);
+    box-shadow: 0 0 0 .2rem var(--space);
+}
+/*   CLOCK    */
+.myClock{
+    border: 1px solid var(--mandarin);
+    border-radius: 4px;
+    width: 79px;
+    margin: 0 auto;
+}
+/********************
+    Go Back Arrow
+********************/
+#triangle {
+    display: inline-block;
+    height: 0;
+    width: 0;
+    position: absolute;
+    left: 12px;
+    top: 12px;
+    border-top: 7px solid transparent;
+    border-right: 13px solid var(--navyBlue);
+    border-bottom: 7px solid transparent;
+    transition: border 0.3s ease-in;
+}
+
+.triangleBis {
+    color: var(--navyBlue);
+    display: inline-block;
+    position: relative;
+    top: -5px;
+    left: 9px;
+    transition: color 0.3s ease-in;
+}
+
+.retourAccueil {
+    position: relative;
+    text-align: center;
+    width: 95px;
+    height: 38px;
+    line-height: 47px;
+    margin-bottom: 10px;
+    color: var(--space);
+    background: var(--grisClair);
+    border-radius: 4px;
+    z-index: 1;
+    transition: background 0.3s ease-in;
+}
+.retourAccueil:after{
+    content:"";
+    position: absolute;
+    left: 0;
+    width: 90px;
+    height: 36px;
+    border-radius: 4px;
+    background: rgba(0, 0, 0, 0.2);
+    z-index: -1;
+    transition: all 0.3s ease-in;
+    transform: scale(0);
+    transform-origin: center;
+}
+.retourAccueil:hover:after {
+    transform: scale(1);
+}
+.retourAccueil:hover {
+    color: whitesmoke;
+    background-color: var(--navyBlue);
+}
+
+.retourAccueil:hover #triangle {
+    border-right: 14px solid var(--blanc);
+}
+
+.retourAccueil:hover .triangleBis {
+    color: var(--blanc);
+}
+
+
+/*******************
+    Mode Sombre
+********************/
+.dark-mode-header-footer {
+    background-color: black;
+    color: white;
+}
+
+.sousBody-dark {
+    background-color: var(--grisFonce);
+    color: var(--blanc);
+    z-index: 1;
+}
+.accueilDark {
+    color: white;
+}
+.btn-outline-secondary-dark {
+    background-color: var(--grisClair);
+    color: black;
+    border-color: var(--grisClair);
+}
+.btn-outline-secondary-dark:hover {
+    background-color: var(--navyBlue);
+    color: white;
+    border-color: var(--grisClair);
+}
+.btn-primary-dark {
+    background-color: var(--gris);
+    border-color: var(--gris);
+    color: var(--navyBlue);
+}
+.btn-primary-dark:hover {
+    background-color: var(--navyBlue);
+    border-color: var(--gris);
+    color: whitesmoke;
+}
+.triangleBis-dark{
+    color: whitesmoke;
+}
