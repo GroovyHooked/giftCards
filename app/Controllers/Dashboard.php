@@ -169,6 +169,7 @@ class Dashboard extends BaseController
             'user_email' => session()->get('email'),
             'title' => 'Carte émises',
             'nbResult' => $nbResult,
+
         ];
 
 
@@ -233,6 +234,10 @@ Vous pouvez la télécharger en vous rendant à cette adresse: http://gift-cards
                 ->whereIn('user_email', [$userMail])
                 ->paginate($var),
             'pager' => $bdd->pager,
+            'totalUseds' => $bdd->whereIn('status', ['U'])
+                                ->whereIn('user_email', [$userMail])
+                                ->get()
+                                ->getResult()
         ];
 
         echo view('templates/header', $data);
@@ -251,6 +256,10 @@ Vous pouvez la télécharger en vous rendant à cette adresse: http://gift-cards
                 ->orderBy('id', 'DESC')
                 ->paginate($var),
             'pager' => $bdd->pager,
+            'totalPending' => $bdd->whereIn('status', ['N'])
+                ->whereIn('user_email', [$userMail])
+                ->get()
+                ->getResult()
         ];
         echo view('templates/header', $data);
         echo view('site/pending', $data);
@@ -261,14 +270,16 @@ Vous pouvez la télécharger en vous rendant à cette adresse: http://gift-cards
     {
         $user_email = session()->get('email');
         $bdd = new UserClient();
-        $bdd2 = new Cards();
         $data = [
             'title' => 'Clients',
             'clients' => $bdd->whereIn('user_email', [$user_email])
+                ->groupBy("lastname")
                 ->orderBy('id', 'DESC')
                 ->paginate($var),
             'pager' => $bdd->pager,
-            'values' => $bdd2->getCardValues($user_email)
+            'totalClients' => $bdd->whereIn('user_email', [$user_email])
+                ->get()
+                ->getResult()
         ];
 
         echo view('templates/header', $data);
@@ -321,9 +332,13 @@ Vous pouvez la télécharger en vous rendant à cette adresse: http://gift-cards
         $data = [
             'title' => 'Bénéficiaires',
             'clients' => $bdd->whereIn('user_email', [$user_email])
+                ->groupBy("lastname")
                 ->orderBy('id', 'DESC')
                 ->paginate($var),
             'pager' => $bdd->pager,
+            'totalGifteds' => $bdd->whereIn('user_email', [$user_email])
+                ->get()
+                ->getResult()
         ];
         echo view('templates/header', $data);
         echo view('site/giftedclients', $data);

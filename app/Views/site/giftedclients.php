@@ -38,7 +38,7 @@
                         <th scope="row"><?= $row['id'] ?></th>
                         <td><?= $row['firstname'] ?></td>
                         <td><?= $row['lastname'] ?></td>
-                        <td><a href="tel:<?= $row['phone'] ?>"><?= $row['phone'] ?></a></td>
+                        <td><a href="mailto:<?= $row['email'] ?>"><?= $row['email'] ?></a>  </td>
                         <td>
                             <!-- Button trigger modal -->
                             <button type="button" class="btn btn-primary" data-toggle="modal"
@@ -60,8 +60,8 @@
                                             <div class="container">
                                                 <div class="row">
                                                     <div class="col-10 offset-2">
+                                                        <p><a href="tel:<?= $row['phone'] ?>"><?= $row['phone'] ?></a></p>
                                                         <p><?= $row['address'] ?> </p>
-                                                        <p><a href="mailto:<?= $row['email'] ?>"><?= $row['email'] ?></a>  </p>
                                                     </div>
                                                 </div>
                                             </div>
@@ -88,18 +88,18 @@
                         Résultats/Page
                     </button>
                     <div class="dropdown-menu">
-                        <a class="dropdown-item" href="<?= base_url('giftedclients/5')?>">5</a>
-                        <a class="dropdown-item" href="<?= base_url('giftedclients/10')?>">10</a>
-                        <a class="dropdown-item" href="<?= base_url('giftedclients/15')?>">15</a>
-                        <a class="dropdown-item" href="<?= base_url('giftedclients/20')?>">20</a>
-                        <a class="dropdown-item" href="<?= base_url('giftedclients/100')?>">100</a>
+                        <a class="dropdown-item" href="<?= base_url('giftedClients/5')?>">5</a>
+                        <a class="dropdown-item" href="<?= base_url('giftedClients/10')?>">10</a>
+                        <a class="dropdown-item" href="<?= base_url('giftedClients/15')?>">15</a>
+                        <a class="dropdown-item" href="<?= base_url('giftedClients/20')?>">20</a>
+                        <a class="dropdown-item" href="<?= base_url('giftedClients/100')?>">100</a>
                     </div>
                 </div>
             </div>
         </div>
         <div class="row">
             <div class="col-12">
-                <p>Nb de résulats: <?= count($clients)?></p>
+                <!--<p>Nb total de résulats: ?= count($totalGifteds)?></p>-->
             </div>
         </div>
     </div>

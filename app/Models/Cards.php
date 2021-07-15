@@ -126,11 +126,5 @@ class Cards extends Model
                     ->get()
                     ->getResult();
     }
-
-    public function getCardValues($var){
-        return $this->select('value')
-                    ->where('user_email', $var)
-                    ->get()
-                    ->getResult();
-    }
+    
 }

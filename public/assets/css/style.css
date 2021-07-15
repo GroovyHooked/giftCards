@@ -536,7 +536,7 @@ span.ccc{
     border-color: var(--grisClair);
 }
 .btn-outline-secondary-dark:hover {
-    background-color: var(--navyBlue);
+    background-color: var(--grisFonce);
     color: white;
     border-color: var(--grisClair);
 }

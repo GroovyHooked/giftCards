@@ -95,8 +95,8 @@ use App\Models\Cards;
                                     name="personnalId">Send
                                 </button>
                             <?php } elseif ($sentStatus == true){ ?>
-                                <button type="submit" class="btn btn-primary btn-sm" value="<?= $row['id'] ?>"
-                                        name="personnalId" disabled="disabled">Done
+                                <button type="submit" class="btn btn-success btn-sm" value="<?= $row['id'] ?>"
+                                        name="personnalId">Done
                                 </button>
                                 <!--<button type="submit" class="btn btn-primary btn-sm" value=""
                                         name="personnalId">@
@@ -164,10 +164,7 @@ use App\Models\Cards;
             </table>
         </div>
         <div class="row">
-            <div class="col-1">
-                <p>R:<?= $nbResult ?></p>
-            </div>
-            <div class="col-10">
+            <div class="col-12">
                 <div class="btn-group dropup mb-2">
                     <button type="button" class="btn btn-outline-dark btn-outline-secondary dropdown-toggle paginationButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                         Résultats/Page
@@ -182,7 +179,11 @@ use App\Models\Cards;
                 </div>
             </div>
         </div>
+        <div class="row">
+            <div class="col-12">
+                <p>Nb total de résulats: <?= $nbResult?></p>
+            </div>
+        </div>
     </div>
 </div>
-
 

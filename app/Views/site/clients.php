@@ -96,5 +96,10 @@
                 </div>
             </div>
         </div>
+        <div class="row">
+            <div class="col-12">
+                <!--<p>Nb total de résulats: ?= count($totalClients)?></p>-->
+            </div>
+        </div>
     </div>
 </div>
