@@ -194,7 +194,7 @@ class Dashboard extends BaseController
                 $email->setFrom('macminidethomas@gmail.com', 'Gift Cards Inc');
                 $email->setTo($giftedEmail);
                 $email->setSubject('Carte Cadeau à l\'attention de ' . $giftedFirstname . ' ' . $giftedLastname . ' .');
-                $email->setMessage($giftedFirstname . ' ' . $giftedLastname . ', 
+                $email->setMessage('Bonjour '.$giftedFirstname . ' ' . $giftedLastname . ', 
 Carte cadeau de l\'établissement ' . $company . ' d\'une valeur de ' . $giftedValue . ' €. 
 Cette carte cadeau vous a été offerte par ' . $clientFirstname . ' ' . $clientLastname . '. 
 Voici son adresse mail: ' . $client_email . '. 
@@ -261,12 +261,14 @@ Vous pouvez la télécharger en vous rendant à cette adresse: http://gift-cards
     {
         $user_email = session()->get('email');
         $bdd = new UserClient();
+        $bdd2 = new Cards();
         $data = [
             'title' => 'Clients',
             'clients' => $bdd->whereIn('user_email', [$user_email])
                 ->orderBy('id', 'DESC')
                 ->paginate($var),
             'pager' => $bdd->pager,
+            'values' => $bdd2->getCardValues($user_email)
         ];
 
         echo view('templates/header', $data);

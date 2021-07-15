@@ -126,15 +126,22 @@ use App\Models\Cards;
                                             <div class="container">
                                                 <div class="row">
                                                     <div class="col-10 offset-2">
-                                                        <p class="text-dark"><?= $row['giftedPhone'] ?></p>
-                                                        <p class="text-dark">Carte achetée par:</p>
-                                                        <p class="text-dark">Mr ou Mme <?= $row['clientLastname'] ?></p>
-                                                        <p class="text-dark"><?= $row['clientAddress'] ?> </p>
-                                                        <p class="text-dark">
+                                                        <p class="text-dark qrCard font-weight-bold ml-5">Montant: <?= $row['value'] ?>€</p>
+                                                        <p class="text-dark font-weight-bold qrCard">Carte offerte par:</p>
+                                                        <p class="text-dark qrCard">Mr ou Mme <?= $row['clientLastname'] ?></p>
+                                                        <p class="text-dark qrCard">
                                                             <a href="tel:<?= $row['clientPhone'] ?>"><?= $row['clientPhone'] ?></a>
                                                         </p>
-                                                        <p>
-                                                            <a href="mailto:<?= $row['client_email'] ?>"> <?= $row['client_email'] ?> </a>
+                                                        <p class="text-dark qrCard">
+                                                            <a href="mailto:<?= $row['client_email'] ?>" ><?= $row['client_email'] ?></a>
+                                                        </p>
+                                                        <p class="text-dark font-weight-bold qrCard">Carte à l'attention de:</p>
+                                                        <p class="text-dark qrCard">Mr ou Mme <?= $row['giftedLastname'] ?></p>
+                                                        <p class="text-dark qrCard">
+                                                            <a href="tel:<?= $row['giftedPhone'] ?>"><?= $row['giftedPhone'] ?></a>
+                                                        </p>
+                                                        <p class="text-dark qrCard">
+                                                            <a href="mailto:<?= $row['gifted_email'] ?>" ><?= $row['gifted_email'] ?></a>
                                                         </p>
                                                         <img src="<?= $row['card_url'] ?>" class="img-fluid" alt="">
                                                     </div>

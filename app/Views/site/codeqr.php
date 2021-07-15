@@ -8,10 +8,10 @@ foreach ($codeqr as $row) {
                     <div class="card" style="width: 18rem;">
                         <img src="<?= base_url('/').'/'.$row->card_url ?>" class="card-img-top" alt="code qr">
                         <div class="card-body">
-                            <h5 class="card-title text-center">Card de Mr ou Mme <?= $row->giftedLastname ?></h5>
+                            <h5 class="card-title text-center text-dark">Card de Mr ou Mme <?= $row->giftedLastname ?></h5>
                             <div class="card-body">
-                                <p class="card-text text-center">Valeur de la carte: <?= $row->value ?></p>
-                                <p class="card-text text-center">ID de la carte: <?= $row->card_uniqid ?></p>
+                                <p class="card-text text-center text-dark">Valeur de la carte: <?= $row->value ?></p>
+                                <p class="card-text text-center text-dark">ID de la carte: <?= $row->card_uniqid ?></p>
                             </div>
                             <input type="hidden" name="hidden" value="<?= $row->card_uniqid ?>">
                             <button class="btn btn-primary m-auto d-block w-50" name="button">Valider</button>

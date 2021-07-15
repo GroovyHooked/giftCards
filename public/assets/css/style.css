@@ -18,6 +18,9 @@ body {
     color: var(--mandarin);
     font-family: Georgia, serif;
 }
+.qrCard{
+    margin-bottom: -3px;
+}
 .table td{
     padding: 0.4rem;
 }
@@ -396,7 +399,7 @@ span.ccc{
         height: 39px;
         font-size: 1rem;
         width: 100%;
-        background-color: var(--navyBlue);
+        background-color: #bfc0c0;
         color: var(--blanc);
         border-radius: 4px;
         transition: all 0.5s ease;

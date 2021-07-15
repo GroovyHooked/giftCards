@@ -38,7 +38,7 @@
                         <th scope="row"><?= $row['id'] ?></th>
                         <td><?= $row['firstname'] ?></td>
                         <td><?= $row['lastname'] ?></td>
-                        <td><?= $row['phone'] ?></td>
+                        <td><a href="tel:<?= $row['phone'] ?>"><?= $row['phone'] ?></a></td>
                         <td>
                             <!-- Button trigger modal -->
                             <button type="button" class="btn btn-primary" data-toggle="modal"
@@ -61,7 +61,7 @@
                                                 <div class="row">
                                                     <div class="col-10 offset-2">
                                                         <p><?= $row['address'] ?> </p>
-                                                        <p><a href="tel:<?= $row['phone'] ?>"><?= $row['phone'] ?></a></p>
+                                                        <p><a href="mailto:<?= $row['email'] ?>"><?= $row['email'] ?></a>  </p>
                                                     </div>
                                                 </div>
                                             </div>
