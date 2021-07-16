@@ -97,7 +97,7 @@
         setInterval(function() {
             counter++;
             if (counter <= value) {
-                salesDisplay.innerText = counter + ' €';
+                salesDisplay.innerText = counter + ',00 €';
             }
         }, .01)
     }

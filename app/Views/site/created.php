@@ -91,12 +91,13 @@ use App\Models\Cards;
                             //var_dump($bdd->isSentInfo($row['id']));
                             if($sentStatus == false ){
                             ?>
-                                <button type="submit" class="btn btn-primary btn-sm" value="<?= $row['id'] ?>"
+                                <button type="submit" class="btn btn-primary btn-sm p-2 pr-4 pl-4" value="<?= $row['id'] ?>"
                                     name="personnalId">Send
                                 </button>
                             <?php } elseif ($sentStatus == true){ ?>
                                 <button type="submit" class="btn btn-success btn-sm" value="<?= $row['id'] ?>"
-                                        name="personnalId">Done
+                                        name="personnalId"><p class="createdButton">Sent</p>
+                                    <p class="createdButton"><small>(send again)</small></p>
                                 </button>
                                 <!--<button type="submit" class="btn btn-primary btn-sm" value=""
                                         name="personnalId">@

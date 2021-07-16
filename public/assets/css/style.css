@@ -21,6 +21,10 @@ body {
 .qrCard{
     margin-bottom: -3px;
 }
+.createdButton{
+    margin-bottom: -5px;
+    padding: 0;
+}
 .table td{
     padding: 0.4rem;
 }
