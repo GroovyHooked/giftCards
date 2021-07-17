@@ -18,9 +18,7 @@ body {
     color: var(--mandarin);
     font-family: Georgia, serif;
 }
-.qrCard{
-    margin-bottom: -3px;
-}
+
 .createdButton{
     margin-bottom: -5px;
     padding: 0;
@@ -79,6 +77,20 @@ body {
 #contactForm{
     margin-top: -5px;
 }
+/*
+    Page de scan
+*/
+
+
+.qrcode-text-btn {
+    display: inline-block;
+    height: 1em;
+    width: 1em;
+
+    cursor: pointer;
+}
+
+
 /****************
     Login Page
     (Transitions sur "Connexion")
@@ -92,7 +104,26 @@ span.ccc{
     animation: p1 0.3s ease 1;
     animation-fill-mode: forwards;    /*      E          */
 }
-
+.passwdTooltip{
+    position: relative;
+}
+.passwdTooltip::before{
+    visibility: hidden;
+    position: absolute;
+    content: 'Votre mot de passe doit être composé de min 8 caractères dont au moins 1 chiffre et une lettre capitale';
+    width: 251px;
+    height: 103px;
+    top: -174px;
+    background-color: white;
+    border: 1px solid black;
+    left: 0;
+    padding: 8px;
+    font-size: 0.9rem;
+    text-align: center;
+}
+.passwdTooltip:focus-within::before{
+    visibility: visible;
+}
 @keyframes p1 {
     0%{opacity: 0;}
     25%{opacity: 0.3;}
@@ -428,6 +459,9 @@ span.ccc{
     background-color: var(--orange);
     border-color: var(--orange);
 }
+.qrCard{
+    margin-bottom: -3px;
+}
 /* Dropdown menu */
 .dropdown-toggle {
     background-color: var(--navyBlue);
@@ -556,4 +590,69 @@ span.ccc{
 }
 .triangleBis-dark{
     color: whitesmoke;
+}
+/* Account View */
+.acountContainer{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 320px;
+}
+.accountForm{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 300px;
+    width: 280px;
+}
+.firstInputAccount{
+    left: 20px;
+    position: relative;
+}
+.emailInput{
+    width: 225px;
+    position: relative;
+    left: 13px;
+}
+.accountTitle{
+    position: relative;
+}
+.accountTitle::before{
+    position: absolute;
+    content: '';
+    width: 185px;
+    height: 2px;
+    background-color: var(--navyBlue);
+    top: 45px;
+}
+/* Card Print Options */
+.hiddenCreated{
+    display: none;
+}
+@media print {
+    body,
+    #closeModal,
+    .modal-title,
+    .close,
+    .hideForPrint{
+        visibility: hidden;
+    }
+    .printSection{
+        visibility: visible;
+    }
+    .hiddenCreated{
+        display: block;
+    }
+    .printSection{
+        position: absolute;
+        left: 0;
+    }
+    .topParagraph{
+        margin-top: 20px;
+    }
+    .sousPrintSection{
+        position: absolute;
+        left: -150px;
+    }
+
 }

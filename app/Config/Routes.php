@@ -43,21 +43,22 @@ $routes->match(['get', 'post'], 'contact', 'Dashboard::contact');
 $routes->get('logout', 'Controller::logout');
 $routes->get('read', 'Dashboard::read');
 $routes->match(['get', 'post'],'created', 'Dashboard::created');
-$routes->match(['get', 'post'],'created/(:any)', 'Dashboard::created/$1');
+$routes->match(['get', 'post'],'created/(:num)', 'Dashboard::created/$1');
 $routes->get('used', 'Dashboard::used');
 $routes->get('used/(:any)', 'Dashboard::used/$1');
 $routes->get('pending', 'Dashboard::pending');
-$routes->get('pending/(:any)', 'Dashboard::pending/$1');
+$routes->get('pending/(:num)', 'Dashboard::pending/$1');
 $routes->get('clients', 'Dashboard::clients');
 $routes->get('clients/(:any)', 'Dashboard::clients/$1');
 $routes->get('codeqr', 'Dashboard::codeqr');
 $routes->get('giftedclients', 'Dashboard::giftedclients');
-$routes->get('giftedclients(:any)', 'Dashboard::giftedclients/$1');
+$routes->get('giftedclients(:num)', 'Dashboard::giftedclients/$1');
 $routes->match(['get', 'post'], 'codeqr/(:any)', 'Dashboard::codeqr/$1');
 $routes->match(['get', 'post'], 'resetpass', 'Controller::resetpass');
 $routes->match(['get', 'post'], 'resetpass/(:any)', 'Controller::resetpass');
 $routes->match(['get', 'post'], 'accounting', 'Dashboard::accounting');
 $routes->match(['get', 'post'], 'qrcode/(:any)', 'Dashboard::qrcode/$1');
+$routes->match(['get', 'post'], 'myaccount', 'Dashboard::myaccount');
 
 
 

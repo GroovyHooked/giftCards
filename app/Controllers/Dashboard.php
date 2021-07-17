@@ -5,6 +5,7 @@ namespace App\Controllers;
 use App\Models\Cards;
 use App\Models\GiftedClient;
 use App\Models\UserClient;
+use App\Models\UserModel;
 use Endroid\QrCode\ErrorCorrectionLevel;
 use Endroid\QrCode\LabelAlignment;
 use Endroid\QrCode\QrCode;
@@ -436,4 +437,38 @@ Vous pouvez la télécharger en vous rendant à cette adresse: http://gift-cards
             echo view('site/accounting');
             echo view('templates/footer');
         }
+    public function myaccount()
+    {
+        $sessionID = session()->get('id');
+        //$user_email = session()->get('email');
+        $bdd = new UserModel();
+        $data = [
+            'title' => 'Mon Compte',
+            'clientInfo' => $bdd->getUserDataById($sessionID),
+            'session' => $sessionID
+        ];
+        if ($this->request->getMethod() == 'post') {
+            $rules = [
+                'company' => 'required',
+                'lastName' => 'required',
+                'firstName' => 'required',
+                'email' => 'required|valid_email'
+            ];
+            if (!$this->validate($rules)) {
+                $data['validation'] = $this->validator;
+            } else {
+                $company = $this->request->getVar('company');
+                $lastname = $this->request->getVar('lastName');
+                $firstname = $this->request->getVar('firstName');
+                $email = $this->request->getVar('email');
+
+                $bdd->updateProfile($sessionID, $company, $lastname, $firstname, $email);
+
+                return redirect()->to('myaccount');
+            }
+        }
+        echo view('templates/header', $data);
+        echo view('site/account');
+        echo view('templates/footer');
+    }
     }

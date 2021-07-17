@@ -190,13 +190,13 @@
                         <div class="dashButtonDiv">
                             <?php if (session()->get('isLoggedIn')) : ?>
                                 <a href="<?= base_url('used') ?>">
-                                    <button type="button" class="btn btn-outline-secondary w-100 pt-lg-3 pb-lg-3">cartes
+                                    <button type="button" class="btn btn-outline-secondary w-100 pt-lg-3 pb-lg-3">Cartes
                                         utilisées
                                     </button>
                                 </a>
                             <?php else : ?>
                                 <a href="<?= base_url('index') ?>">
-                                    <button type="button" class="btn btn-outline-secondary w-100 pt-lg-3 pb-lg-3">cartes
+                                    <button type="button" class="btn btn-outline-secondary w-100 pt-lg-3 pb-lg-3">Cartes
                                         utilisées
                                     </button>
                                 </a>

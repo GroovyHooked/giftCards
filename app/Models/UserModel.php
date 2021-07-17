@@ -40,6 +40,12 @@ class UserModel extends Model
                     ->first();
     }
 
+    public function getUserDataById($var)
+    {
+        return $this->where('id', $var)
+            ->first();
+    }
+
     public function checkIfUserExist($var)
     {
         $query = $this->where('email', $var)
@@ -90,6 +96,15 @@ class UserModel extends Model
     {
         return $this->set('password', $password)
             ->where('email', $userMail)
+            ->update();
+    }
+    public function updateProfile($id, $company, $lastName, $firstName, $email)
+    {
+        return $this->set('company', $company)
+            ->set('lastname', $lastName)
+            ->set('firstname', $firstName)
+            ->set('email', $email)
+            ->where('id', $id)
             ->update();
     }
 }

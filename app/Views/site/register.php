@@ -28,7 +28,7 @@
                             <input type="email" class="form-control" placeholder="Email" name="email" value="<?= set_value('email') ?>">
                         </div>
                     </div>
-                    <div class="form-group">
+                    <div class="form-group passwdTooltip">
                         <label for="password" class="offset-1 col-form-label">Mot de passe</label>
                         <div class="col-sm-12">
                             <input type="text" class="form-control " placeholder="Mot de passe" name="password" value="">

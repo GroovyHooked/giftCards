@@ -10,7 +10,7 @@ foreach ($codeqr as $row) {
                         <div class="card-body">
                             <h5 class="card-title text-center text-dark">Card de Mr ou Mme <?= $row->giftedLastname ?></h5>
                             <div class="card-body">
-                                <p class="card-text text-center text-dark">Valeur de la carte: <?= $row->value ?></p>
+                                <p class="card-text text-center text-dark">Valeur de la carte: <?= $row->value ?>€</p>
                                 <p class="card-text text-center text-dark">ID de la carte: <?= $row->card_uniqid ?></p>
                             </div>
                             <input type="hidden" name="hidden" value="<?= $row->card_uniqid ?>">

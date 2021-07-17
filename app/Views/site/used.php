@@ -78,7 +78,7 @@
                                                         <p class="text-dark qrCard">
                                                             <a href="mailto:<?= $row['gifted_email'] ?>" ><?= $row['gifted_email'] ?></a>
                                                         </p>
-                                                        <img src="<?= $row['card_url'] ?>" class="img-fluid" alt="">
+                                                        <img src="<?=base_url($row['card_url'])?>" class="img-fluid" alt="">
                                                     </div>
                                                 </div>
                                             </div>

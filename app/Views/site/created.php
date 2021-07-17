@@ -58,44 +58,44 @@ use App\Models\Cards;
                 </thead>
                 <tbody>
                 <?php
-                foreach ($users as $row) {
-                    ?>
+                foreach ($users as $user) {
+                ?>
                 <form action="<?= base_url('created') ?>" method="post">
                     <tr>
                         <th scope="row">
-                            <?= $row['id'] ?>
+                            <?= $user['id'] ?>
                         </th>
                         <td>
-                            <?= $row['giftedFirstname'] ?>
-                            <input type="hidden" name="giftedFirstname" value="<?= $row['giftedFirstname'] ?>">
+                            <?= $user['giftedFirstname'] ?>
+                            <input type="hidden" name="giftedFirstname" value="<?= $user['giftedFirstname'] ?>">
                         </td>
                         <td>
-                            <?= $row['giftedLastname'] ?>
-                            <input type="hidden" name="giftedLastname" value="<?= $row['giftedLastname'] ?>">
+                            <?= $user['giftedLastname'] ?>
+                            <input type="hidden" name="giftedLastname" value="<?= $user['giftedLastname'] ?>">
                         </td>
                         <td>
-                            <?= number_to_currency($row['value'], 'EUR', 'fr', 2) ?>
+                            <?= number_to_currency($user['value'], 'EUR', 'fr', 2) ?>
                             <input type="hidden" name="value"
-                                   value="<?= number_to_currency($row['value'], 'EUR', 'fr', 2) ?>">
+                                   value="<?= number_to_currency($user['value'], 'EUR', 'fr', 2) ?>">
                             <input type="hidden" name="gifted_email"
-                                   value="<?= $row['gifted_email'] ?>">
+                                   value="<?= $user['gifted_email'] ?>">
                             <input type="hidden" name="client_email"
-                                   value="<?= $row['client_email'] ?>">
+                                   value="<?= $user['client_email'] ?>">
                             <input type="hidden" name="id"
-                                   value="<?= $row['id'] ?>">
+                                   value="<?= $user['id'] ?>">
                         </td>
                         <td>
                             <?php
                             $bdd = new Cards();
-                            $sentStatus = $bdd->isSentInfo($row['id']);
-                            //var_dump($bdd->isSentInfo($row['id']));
+                            $sentStatus = $bdd->isSentInfo($user['id']);
+                            //var_dump($bdd->isSentInfo($user['id']));
                             if($sentStatus == false ){
-                            ?>
-                                <button type="submit" class="btn btn-primary btn-sm p-2 pr-4 pl-4" value="<?= $row['id'] ?>"
-                                    name="personnalId">Send
+                                ?>
+                                <button type="submit" class="btn btn-primary btn-sm p-2 pr-4 pl-4" value="<?= $user['id'] ?>"
+                                        name="personnalId">Send
                                 </button>
                             <?php } elseif ($sentStatus == true){ ?>
-                                <button type="submit" class="btn btn-success btn-sm" value="<?= $row['id'] ?>"
+                                <button type="submit" class="btn btn-success btn-sm" value="<?= $user['id'] ?>"
                                         name="personnalId"><p class="createdButton">Sent</p>
                                     <p class="createdButton"><small>(send again)</small></p>
                                 </button>
@@ -108,13 +108,14 @@ use App\Models\Cards;
 
                             <!-- Button trigger modal -->
                             <button type="button" class="btn btn-primary" data-toggle="modal"
-                                    data-target="#modal<?= $row['id'] ?>">
+                                    data-target="#modal<?= $user['id'] ?>">
                                 +
                             </button>
                             <!-- Modal -->
-                            <div class="modal" id="modal<?= $row['id'] ?>" tabindex="-1" role="dialog"
+                            <div class="modal printSection" id="modal<?= $user['id'] ?>" tabindex="-1" role="dialog"
                                  aria-hidden="true">
                                 <div class="modal-dialog modal-dialog-scrollable" role="document">
+                                    <h5 class="hiddenCreated text-dark">Carte cadeau de l'établissement <?= $user['company']?></h5>
                                     <div class="modal-content">
                                         <div class="modal-header">
                                             <h5 class="modal-title" id="Modal">Informations supplémentaires</h5>
@@ -123,34 +124,39 @@ use App\Models\Cards;
                                                 <span aria-hidden="true">&times;</span>
                                             </button>
                                         </div>
-                                        <div class="modal-body">
+                                        <div class="modal-body sousPrintSection">
                                             <div class="container">
                                                 <div class="row">
                                                     <div class="col-10 offset-2">
-                                                        <p class="text-dark qrCard font-weight-bold ml-5">Montant: <?= $row['value'] ?>€</p>
+                                                        <p class="text-dark qrCard font-weight-bold ml-5">Montant: <?= $user['value'] ?>€</p>
                                                         <p class="text-dark font-weight-bold qrCard">Carte offerte par:</p>
-                                                        <p class="text-dark qrCard">Mr ou Mme <?= $row['clientLastname'] ?></p>
+                                                        <p class="text-dark qrCard">Mr ou Mme <?= $user['clientLastname'] ?></p>
                                                         <p class="text-dark qrCard">
-                                                            <a href="tel:<?= $row['clientPhone'] ?>"><?= $row['clientPhone'] ?></a>
+                                                            <a href="tel:<?= $user['clientPhone'] ?>"><?= $user['clientPhone'] ?></a>
                                                         </p>
                                                         <p class="text-dark qrCard">
-                                                            <a href="mailto:<?= $row['client_email'] ?>" ><?= $row['client_email'] ?></a>
+                                                            <a href="mailto:<?= $user['client_email'] ?>" ><?= $user['client_email'] ?></a>
                                                         </p>
-                                                        <p class="text-dark font-weight-bold qrCard">Carte à l'attention de:</p>
-                                                        <p class="text-dark qrCard">Mr ou Mme <?= $row['giftedLastname'] ?></p>
-                                                        <p class="text-dark qrCard">
-                                                            <a href="tel:<?= $row['giftedPhone'] ?>"><?= $row['giftedPhone'] ?></a>
+                                                        <p class="hiddenCreated text-dark topParagraph">Cette carte vous a été offerte par <?= $user['clientFirstname']?> <?= $user['clientLastname']?> </p>
+                                                        <p class="hiddenCreated text-dark">Vous pouvez venir l'utiliser dans l'établissement <?= $user['company']?> </p>
+                                                        <p class="hiddenCreated text-dark">Lorem ipsum ......</p>
+                                                        <p class="hiddenCreated text-dark">Nous vous souhaitons un heureux moment ! </p>
+                                                        <p class="hiddenCreated text-dark">L'équipe GiftCards </p>
+                                                        <p class="text-dark font-weight-bold qrCard hideForPrint">Carte à l'attention de:</p>
+                                                        <p class="text-dark qrCard hideForPrint">Mr ou Mme <?= $user['giftedLastname'] ?></p>
+                                                        <p class="text-dark qrCard hideForPrint">
+                                                            <a href="tel:<?= $user['giftedPhone'] ?>"><?= $user['giftedPhone'] ?></a>
                                                         </p>
-                                                        <p class="text-dark qrCard">
-                                                            <a href="mailto:<?= $row['gifted_email'] ?>" ><?= $row['gifted_email'] ?></a>
+                                                        <p class="text-dark qrCard hideForPrint">
+                                                            <a href="mailto:<?= $user['gifted_email'] ?>" ><?= $user['gifted_email'] ?></a>
                                                         </p>
-                                                        <img src="<?= $row['card_url'] ?>" class="img-fluid" alt="">
+                                                        <img src="<?= base_url($user['card_url']) ?>" class="img-fluid" alt="">
                                                     </div>
                                                 </div>
                                             </div>
                                         </div>
                                         <div class="modal-footer">
-                                            <button type="button" class="btn btn-outline-secondary"
+                                            <button type="button" class="btn btn-outline-secondary" id="closeModal"
                                                     data-dismiss="modal">Close
                                             </button>
                                         </div>

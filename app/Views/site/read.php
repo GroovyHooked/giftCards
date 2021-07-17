@@ -26,7 +26,10 @@
                         <label for="avatar">Accédez à votre appareil photo</label>
                     </div>
                     <div class="col-12">
-                        <input type="file" id="avatar" name="avatar" accept="image/*">
+                        <label class=qrcode-text-btn>
+                        <input type="file" id="avatar" name="avatar" accept="image/*" capture=environment
+                               tabindex=-1>
+                        </label>
                     </div>
                 </div>
             </div>

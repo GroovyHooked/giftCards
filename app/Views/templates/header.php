@@ -54,6 +54,7 @@
                                 <a class="dropdown-item" href="<?= base_url('clients') ?>">Clients</a>
                                 <a class="dropdown-item" href="<?= base_url('accounting') ?>">Comptabilité</a>
                                 <div class="dropdown-divider"></div>
+                                <a class="dropdown-item" href="<?= base_url('myaccount') ?>">Mon Compte</a>
                                 <a class="dropdown-item" href="<?= base_url('logout') ?>">Deconnexion</a>
                             </div>
                         </div>
